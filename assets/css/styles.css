@@ -1,0 +1,12 @@
+html, body {
+	font-family: 'Ubuntu Condensed', sans-serif;
+	/*font-family: 'Open Sans', sans-serif;*/
+}
+
+.pad-top-70 {
+	padding-top: 70px;
+}
+
+.with-error {
+	color: #B82B2B;
+}
