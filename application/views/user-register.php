@@ -31,10 +31,22 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Login</h3>
+							<h3 class="panel-title">Register</h3>
 						</div>
 						<div class="panel-body">
-							<?php echo form_open('user/login'); ?>
+							<?php echo form_open('user/register'); ?>
+
+								<div class="form-group">
+									<label for="input_firstname">First Name:</label>
+									<input type="text" name="input_firstname" id="input_firstname" class="form-control" placeholder="First name" value="<?= set_value('input_firstname') ?>">
+									<?php echo form_error('input_firstname', '<div class="with-error">', '</div>'); ?>
+								</div>
+
+								<div class="form-group">
+									<label for="input_lastname">Last Name:</label>
+									<input type="text" name="input_lastname" id="input_lastname" class="form-control" placeholder="Last name" value="<?= set_value('input_lastname') ?>">
+									<?php echo form_error('input_lastname', '<div class="with-error">', '</div>'); ?>
+								</div>
 
 								<div class="form-group">
 									<label for="input_username">Username:</label>
@@ -49,18 +61,14 @@
 								</div>
 
 								<div class="form-group">
-									<div>
-										<button type="submit" class="btn btn-default">Login</button>
-										&nbsp;&nbsp;Don't have an account? Register <a href="<?= base_url('user/register') ?>">here</a>
-									</div>
+									<label for="input_confirmpassword">Comnfirm Password:</label>
+									<input type="password" name="input_confirmpassword" id="input_confirmpassword" class="form-control" placeholder="Confirm password" value="<?= set_value('input_confirmpassword') ?>">
+									<?php echo form_error('input_confirmpassword', '<div class="with-error">', '</div>'); ?>
 								</div>
 
 								<div class="form-group">
-									<?php if (isset($no_user)) : ?>
-										<div class="alert alert-danger">
-											<strong>Error:</strong> <?= $no_user ?>
-										</div>
-									<?php endif; ?>
+									<button type="submit" class="btn btn-default">Sign Up</button>
+									&nbsp;&nbsp;Already have an account? Login <a href="<?= base_url('/') ?>">here</a>
 								</div>
 
 							<?php echo form_close(); ?>

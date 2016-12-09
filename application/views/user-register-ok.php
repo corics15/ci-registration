@@ -31,39 +31,10 @@
 
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h3 class="panel-title">Login</h3>
+							<h3 class="panel-title">Thank You!</h3>
 						</div>
 						<div class="panel-body">
-							<?php echo form_open('user/login'); ?>
-
-								<div class="form-group">
-									<label for="input_username">Username:</label>
-									<input type="text" name="input_username" id="input_username" class="form-control" placeholder="Username or email" value="<?= set_value('input_username') ?>">
-									<?php echo form_error('input_username', '<div class="with-error">', '</div>'); ?>
-								</div>
-
-								<div class="form-group">
-									<label for="input_password">Password:</label>
-									<input type="password" name="input_password" id="input_password" class="form-control" placeholder="Password" value="<?= set_value('input_password') ?>">
-									<?php echo form_error('input_password', '<div class="with-error">', '</div>'); ?>
-								</div>
-
-								<div class="form-group">
-									<div>
-										<button type="submit" class="btn btn-default">Login</button>
-										&nbsp;&nbsp;Don't have an account? Register <a href="<?= base_url('user/register') ?>">here</a>
-									</div>
-								</div>
-
-								<div class="form-group">
-									<?php if (isset($no_user)) : ?>
-										<div class="alert alert-danger">
-											<strong>Error:</strong> <?= $no_user ?>
-										</div>
-									<?php endif; ?>
-								</div>
-
-							<?php echo form_close(); ?>
+							You have successfuly registered! <a href="<?= base_url('/') ?>">Login Now!</a>
 						</div>
 					</div>
 
