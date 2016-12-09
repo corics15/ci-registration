@@ -26,6 +26,7 @@ class User extends CI_Controller {
 			$data = array('email' => $un, 'password' => $pw);
 			$r 	= $this->User_model->check_user($data);
 			if ($r > 0) {
+				$this->session->set_userdata('input_username', $un);
 				redirect(base_url('user/member'), 'refresh');
 			} else {
 				$data['no_user'] = 'The username or password doesn\'t exist!';
@@ -63,10 +64,16 @@ class User extends CI_Controller {
 	}
 
 	public function member() {
-		$this->load->view('user-member');
+		$data['member'] = $this->session->userdata('input_username');
+		$this->load->view('user-member', $data);
 	}
 
 	public function success() {
 		$this->load->view('user-register-ok');
+	}
+
+	public function logout() {
+		$this->session->sess_destroy();
+		redirect(base_url('/'), 'refresh');
 	}
 }
